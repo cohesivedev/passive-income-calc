@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Oswald:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Oswald:wght@300;400;500;600&display=swap');
 
 /*font-family: 'Open Sans', sans-serif;*/
 
@@ -112,8 +112,7 @@ nav .title {
 .content-header th:nth-child(1),
 .content-header th:nth-child(2),
 .content-header th:nth-child(3),
-.content-header th:nth-child(4)
-{
+.content-header th:nth-child(4) {
     width: 22%;
 }
 
@@ -141,8 +140,7 @@ nav .title {
 .content #rankings td:nth-child(1),
 .content #rankings td:nth-child(2),
 .content #rankings td:nth-child(3),
-.content #rankings td:nth-child(4)
-{
+.content #rankings td:nth-child(4) {
     width: 22%;
     text-align: center;
 }
@@ -178,6 +176,11 @@ nav .title {
     cursor: pointer;
 }
 
+.content #rankings td.more.calculate {
+    background-color: #F7354D;
+    background-image: url("images/ic-close-white.svg");
+}
+
 .ad {
     background: #500F17;
     position: fixed;
@@ -201,9 +204,137 @@ nav .title {
 .ad-shadow {
     content: '';
     position: fixed;
-    background: linear-gradient(0deg,  black,transparent);
+    background: linear-gradient(0deg, black, transparent);
     height: 98px;
     bottom: -10px;
     left: 0;
     right: 0;
+}
+
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+#modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+#modal .modal-underlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+#modal .modal-content {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    transform: translateY(-50%);
+    background-color: #39080E;
+    color: white;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    text-transform: uppercase;
+}
+
+#modal .modal-content .title {
+    height: 50px;
+    line-height: 50px;
+    font-size: 16px;
+    text-align: center;
+}
+
+#modal .modal-content .slider-container {
+    height: 30px;
+    font-size: 19px;
+    background-color: #500F17;
+    padding: 26px 14px;
+    position: relative;
+}
+
+#modal .modal-content .label {
+    position: absolute;
+    top: 40px;
+}
+
+#modal .modal-content .value {
+    position: absolute;
+    top: 40px;
+    right: 14px;
+}
+
+#modal .modal-content .progress {
+    position: absolute;
+    top: 28px;
+    left: 17px;
+    pointer-events: none;
+    width: 0;
+    height: 5px;
+    background: #2BEE41;
+}
+
+#modal .modal-content .slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.37);
+    outline: none;
+}
+
+#modal .modal-content .slider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 23px; /* Set a specific slider handle width */
+    height: 23px; /* Slider handle height */
+    border-radius: 23px; /* Slider handle height */
+    background: #2BEE41; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+}
+
+#modal .modal-content .calculation {
+    height: 180px;
+    position: relative;
+}
+
+
+#modal .modal-content .calculation .figure {
+    font-weight: 300;
+    font-size: 19px;
+    line-height: 23px;
+    text-transform: none;
+    position: absolute;
+    top: 52px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+#modal #fiat-value {
+    font-weight: 600;
+    color: #2BEE41;
+}
+
+#modal .modal-content .calculation button {
+    font-family: 'Oswald', sans-serif;
+    appearance: none;
+    font-weight: 400;
+    font-size: 17px;
+    text-transform: uppercase;
+    position: absolute;
+    bottom: 31px;
+    height: 55px;
+    left: 50%;
+    outline: none !important;
+    transform: translate(-50%, 0);
+    background-color: #7b1a26;
+    border: 0;
+    width: 295px;
+    color: rgba(192, 192, 192, 0.3);
+    border-radius: 27.5px;
 }
