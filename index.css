@@ -97,6 +97,8 @@ nav .title {
 .content-header table {
     width: 100%;
     height: 100%;
+    table-layout: fixed;
+    overflow-wrap: break-word;
 }
 
 .content-header th {
@@ -106,17 +108,74 @@ nav .title {
     font-size: 12px;
     text-transform: uppercase;
 }
-.content-header th.menu {
-    width: 50px;
+
+.content-header th:nth-child(1),
+.content-header th:nth-child(2),
+.content-header th:nth-child(3),
+.content-header th:nth-child(4)
+{
+    width: 22%;
 }
 
+.content-header th.menu {
+    width: 50px;
+    cursor: pointer;
+}
 
 .content {
     position: absolute;
-    top: 176px;
+    top: 180px;
     left: 0;
     right: 0;
     bottom: 62px;
+    overflow: auto;
+}
+
+.content #rankings,
+.content #rankings tbody {
+    table-layout: fixed;
+    overflow-wrap: break-word;
+    width: 100%;
+}
+
+.content #rankings td:nth-child(1),
+.content #rankings td:nth-child(2),
+.content #rankings td:nth-child(3),
+.content #rankings td:nth-child(4)
+{
+    width: 22%;
+    text-align: center;
+}
+
+.content #rankings td {
+    position: relative;
+    height: 53px;
+    background: rgba(0, 0, 0, 0.3);
+    color: white;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    text-transform: uppercase;
+}
+
+.content #rankings td::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content: '';
+    display: block;
+    background: #7D121F;
+    height: 3px;
+}
+
+.content #rankings td.more {
+    width: 50px;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-image: url("images/ic-arrow-right.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
 }
 
 .ad {
@@ -126,12 +185,25 @@ nav .title {
     left: 0;
     right: 0;
     height: 62px;
+    overflow: visible;
 }
 
 .ad .slot300x50 {
     position: absolute;
-    top:50%;
-    left:50%;
+    top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
-    background: rgba(0,0,0,0.3);
+    background: rgba(0, 0, 0, 0.3);
+    width: 300px;
+    height: 50px;
+}
+
+.ad-shadow {
+    content: '';
+    position: fixed;
+    background: linear-gradient(0deg,  black,transparent);
+    height: 98px;
+    bottom: -10px;
+    left: 0;
+    right: 0;
 }
